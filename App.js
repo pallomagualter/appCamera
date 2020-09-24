@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { Camera } from 'expo-camera';
 
 export default function App() {
@@ -8,27 +8,25 @@ export default function App() {
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
+      const { status }= await Camera.requestPermissionsAsync();
       setHasPermission(status === 'granted'); //Aqui ele irá pegar essa permissão e armazenar como permitido
-    })
+    })();
   }, []);
 
   if(hasPermission === null){
     return <View />
   }
-
+  
   if(hasPermission === false){
-    return <Text>Acesso negado!</Text>
+    return <View />
   }
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Camera
-        style={{ flex: 1  }}
+      <Camera
+        style={{ flex: 1 }}
         type={type}
-        />
-      </View>
+      />
     </SafeAreaView>
   );
 }
@@ -36,8 +34,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: '#7159c1',
+    backgroundColor: '#fff',
     justifyContent: 'center',
-    alignItems: 'center',
   },
 });
