@@ -76,7 +76,7 @@ export default function App() {
           visible={open}
         >
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}> 
-            <View >
+            <View style={{ margin: 10, flexDirection: 'row' }}>
               <TouchableOpacity style={{ margin: 10}} onPress={ () => setOpen(false) }>
                 <FontAwesome name="window-close" size={50} color="#ff0000" />
               </TouchableOpacity>
