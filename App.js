@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Modal } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Modal, Image } from 'react-native';
 import { Feather, FontAwesome } from '@expo/vector-icons';
 
 import { Camera } from 'expo-camera';
@@ -30,6 +30,7 @@ export default function App() {
     if(camRef){ //primeiro verifica se há uma camera
       const data = await camRef.current.takePictureAsync(); //salva os dados da camera
       setCapturedPhoto(data.uri);
+      setOpen(true); //confirmando que há foto
       console.log(data); 
     }
   }
@@ -68,7 +69,6 @@ export default function App() {
         <FontAwesome name= "camera" size={23} color="#fff" />
       </TouchableOpacity>
 
-      {/* Modal para captura de imagem */}
       { capturedPhoto && //se esse capturedPhoto existir então abrirá o modal
         <Modal
           animationType="slide"
@@ -79,6 +79,12 @@ export default function App() {
             <TouchableOpacity style={{ margin: 10}} onPress={ () => setOpen(false) }>
               <FontAwesome name="window-close" size={50} color="#ff0000" />
             </TouchableOpacity>
+
+            <Image 
+              style={{ width: '100%', height: 300, borderRadius: 20 }}
+              source={{ uri: capturedPhoto }}
+            />
+
           </View>
         </Modal>
       }
