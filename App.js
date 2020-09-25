@@ -76,10 +76,15 @@ export default function App() {
           visible={open}
         >
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}> 
-            <TouchableOpacity style={{ margin: 10}} onPress={ () => setOpen(false) }>
-              <FontAwesome name="window-close" size={50} color="#ff0000" />
-            </TouchableOpacity>
+            <View >
+              <TouchableOpacity style={{ margin: 10}} onPress={ () => setOpen(false) }>
+                <FontAwesome name="window-close" size={50} color="#ff0000" />
+              </TouchableOpacity>
 
+              <TouchableOpacity style={{ margin: 10}} onPress={ () => setOpen(false) }>
+                <FontAwesome name="upload" size={50} color="#121212" />
+              </TouchableOpacity>
+            </View>
             <Image 
               style={{ width: '100%', height: 300, borderRadius: 20 }}
               source={{ uri: capturedPhoto }}
