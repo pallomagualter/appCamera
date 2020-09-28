@@ -20,8 +20,8 @@ export default function App() {
 
     (async () => {
       const { status }= await Permissions.askAsync(Permissions.CAMERA_ROLL);
-      console.log(status);
-      //setHasPermission(status === 'granted'); //Aqui ele irá pegar essa permissão e armazenar como permitido
+      //console.log(status);
+      setHasPermission(status === 'granted'); //Aqui ele irá pegar essa permissão e armazenar como permitido
     })();
   }, []);
 
@@ -43,7 +43,13 @@ export default function App() {
   }
 
   async function savePicture() {
-
+    const asset = await MediaLibrary.createAssetAsync(capturedPhoto)
+    .then(() => {
+      alert('Salva com sucesso!');
+    })
+    .catch(error => {
+      console.log('err', error);
+    })
   }
 
   return (
@@ -87,6 +93,7 @@ export default function App() {
           visible={open}
         >
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}> 
+
             <View style={{ margin: 10, flexDirection: 'row' }}>
               <TouchableOpacity style={{ margin: 10}} onPress={ () => setOpen(false) }>
                 <FontAwesome name="window-close" size={50} color="#ff0000" />
