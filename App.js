@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Modal, Image } from 'react-native';
 import { Feather, FontAwesome } from '@expo/vector-icons';
-
 import { Camera } from 'expo-camera';
+import * as Permissions from 'expo-permissions';
+import * as MediaLibrary from 'expo-media-library';
 
 export default function App() {
   const camRef = useRef(null);
@@ -15,6 +16,12 @@ export default function App() {
     (async () => {
       const { status }= await Camera.requestPermissionsAsync(); //Pegando o status e salvando a useState
       setHasPermission(status === 'granted'); //Aqui ele irá pegar essa permissão e armazenar como permitido
+    })();
+
+    (async () => {
+      const { status }= await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      console.log(status);
+      //setHasPermission(status === 'granted'); //Aqui ele irá pegar essa permissão e armazenar como permitido
     })();
   }, []);
 
@@ -33,6 +40,10 @@ export default function App() {
       setOpen(true); //confirmando que há foto
       console.log(data); 
     }
+  }
+
+  async function savePicture() {
+
   }
 
   return (
@@ -81,12 +92,12 @@ export default function App() {
                 <FontAwesome name="window-close" size={50} color="#ff0000" />
               </TouchableOpacity>
 
-              <TouchableOpacity style={{ margin: 10}} onPress={ () => setOpen(false) }>
+              <TouchableOpacity style={{ margin: 10}} onPress={ savePicture }>
                 <FontAwesome name="upload" size={50} color="#121212" />
               </TouchableOpacity>
             </View>
             <Image 
-              style={{ width: '100%', height: 300, borderRadius: 20 }}
+              style={{ width: '100%', height: 450, borderRadius: 20 }}
               source={{ uri: capturedPhoto }}
             />
 
