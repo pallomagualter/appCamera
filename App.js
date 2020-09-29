@@ -65,6 +65,7 @@ export default function App() {
               position: 'absolute',
               bottom: 20,
               left: 20,
+              flexDirection: 'row',
             }}
             onPress={ () => {
               setType(
@@ -74,8 +75,8 @@ export default function App() {
               );
             }}
           >
-              <Feather name="refresh-cw" size={23} color="#fff"/>
-              <Text style={{ fontSize: 20, marginBottom: 13, color: '#fff', fontWeight: 'bold' }}>
+              <Feather name="refresh-cw" size={24} color="#fff"/>
+              <Text style={{ fontSize: 24, marginBottom: 13, color: '#fff', fontWeight: 'bold', marginLeft: 10 }}>
                 Trocar
               </Text>
           </TouchableOpacity>
