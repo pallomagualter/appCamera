@@ -24,3 +24,4 @@ export default function Routes(){
 /*
  createStackNavigator é para navegação em pilha, enquanto uma tela está ativa existe várias ativas ao mesmo tempo.
  createSwitchNavigator só uma tela ficará tiva por vez, o usuário não poderá voltar para tela anterior.
+ */
