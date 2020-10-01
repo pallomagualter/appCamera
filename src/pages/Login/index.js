@@ -59,8 +59,5 @@ export default function Login({ navigation }) {
             </View>
 
         </KeyboardAvoidingView>
-        
-        
-        
     );
 }
