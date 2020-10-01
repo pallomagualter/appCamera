@@ -5,7 +5,7 @@ import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 import * as MediaLibrary from 'expo-media-library';
 
-import './styles.css';
+import styles from './styles';
 
 export default function Home() {
     const camRef = useRef(null);
