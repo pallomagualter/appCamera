@@ -6,6 +6,7 @@ const AppStack = createStackNavigator();
 
 import Login from './pages/Login';
 import Home from './pages/Home';
+import TakePhoto from './pages/TakePhoto';
 
 export default function Routes(){
     return(
@@ -14,6 +15,7 @@ export default function Routes(){
           <AppStack.Navigator screenOptions={{ headerShown: false}}>
             <AppStack.Screen name="Login" component={Login}/>
             <AppStack.Screen name="Home" component={Home} />
+            <AppStack.Screen name="TakePhoto" component={TakePhoto} />
                         
           </AppStack.Navigator>
         </NavigationContainer>
