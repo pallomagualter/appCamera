@@ -28,7 +28,7 @@ export default function Home({ navigation }) {
             </View>
             <View style={styles.content}>
                 <Image style={styles.user} source= {logo} />
-                <Text style={styles.headerText}>Olá, José da Silva </Text>
+                <Text style={styles.headerText}>Hi, Palloma Gualter </Text>
             
                 <TouchableOpacity onPress={handleTakePhoto} style={styles.button} >
                     <Text style={styles.buttonText}>TAKE A PHOTO</Text>
