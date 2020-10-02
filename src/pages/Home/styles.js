@@ -54,6 +54,11 @@ export default StyleSheet.create({
 
     user: {
         marginBottom: 16,
+        height: 97,
+        resizeMode: "contain",
+        alignSelf: 'center',
+        borderRadius: 100,
+        borderColor: '#fff',
     }
 
 });

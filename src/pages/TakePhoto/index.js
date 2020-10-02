@@ -5,9 +5,11 @@ import { Camera } from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 import * as MediaLibrary from 'expo-media-library';
 
+import logo from '../../assets/logo.png';
+
 import styles from './styles';
 
-export default function Home() {
+export default function TakePhoto({ navigation }) {
     const camRef = useRef(null);
     const [type, setType] = useState(Camera.Constants.Type.back); //Aqui iremos definir se o app irá iniciar utilizando a camera frontal ou back, definindo assim o tipo
     const [hasPermission, setHasPermission] = useState(null); //Para armazenar o estado da permissão de utilização da camera
@@ -53,14 +55,26 @@ export default function Home() {
         console.log('err', error);
       })
     }
+
+    function handleHome(){
+      navigation.navigate('Home');
+      
+    }
   
     return (
-        <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Camera
             style={{ flex: 1 }}
             type={type}
             ref={camRef} //faz referência a camera do celular
         >
+          <View style={styles.header}>
+            <Image style={styles.logo} source= {logo} />
+            <TouchableOpacity onPress={handleHome}> 
+                <Feather name="arrow-left" size={42} color="#fff"/>
+            </TouchableOpacity>
+          </View>
+
             <View style={{ flex: 1, backgroundColor: 'transparent', flexDirection: 'row' }}>
             <TouchableOpacity
                 style={{
@@ -68,6 +82,7 @@ export default function Home() {
                 bottom: 20,
                 left: 20,
                 flexDirection: 'row',
+                marginHorizontal: 20,
                 }}
                 onPress={ () => {
                 setType(
@@ -114,7 +129,7 @@ export default function Home() {
             </View>
             </Modal>
         }
-        </SafeAreaView>
+      </SafeAreaView>
     );
 }
   
