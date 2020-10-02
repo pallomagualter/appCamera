@@ -58,7 +58,6 @@ export default StyleSheet.create({
         resizeMode: "contain",
         alignSelf: 'center',
         borderRadius: 100,
-        borderColor: '#fff',
     }
 
 });
