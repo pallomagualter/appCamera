@@ -7,6 +7,9 @@ import logo from '../../assets/logo.png';
 import styles from './styles';
 
 export default function Home({ navigation }) {
+    const user_name = 'Palloma Gualter';
+    //const user_name = AsyncStorage.getItem('nome_guerra_usuario');
+
     function handleTakePhoto(){
         navigation.navigate('TakePhoto');
         
@@ -29,7 +32,7 @@ export default function Home({ navigation }) {
             <View style={styles.content}>
                 <Image style={styles.user} source={{uri:'https://avatars2.githubusercontent.com/u/33058536?s=460&u=bc3bdf38003f317058c59880c9f9b73f7c76c0ef&v=4'}} />
                 
-                <Text style={styles.headerText}>Hi, Palloma Gualter </Text>
+                <Text style={styles.headerText}>Hi, {user_name} </Text>
             
                 <TouchableOpacity onPress={handleTakePhoto} style={styles.button} >
                     <Text style={styles.buttonText}>TAKE A PHOTO</Text>
