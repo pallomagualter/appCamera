@@ -40,7 +40,7 @@ export default StyleSheet.create({
     },
  
     buttonText: {
-        color: '#ffffff',//'#121212',
+        color: '#121212',
         fontWeight: 'bold',
         fontSize: 20,
      },
@@ -55,9 +55,9 @@ export default StyleSheet.create({
     user: {
         marginBottom: 16,
         height: 97,
+        width: 97,
         resizeMode: "contain",
-        alignSelf: 'center',
         borderRadius: 100,
-    }
+    },
 
 });

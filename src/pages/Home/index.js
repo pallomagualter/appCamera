@@ -3,7 +3,6 @@ import { Feather } from '@expo/vector-icons';
 import { View, Image, Text, TouchableOpacity, AsyncStorage } from 'react-native';
 
 import logo from '../../assets/logo.png';
-import user from '../../assets/user.jpg';
 
 import styles from './styles';
 
@@ -28,7 +27,7 @@ export default function Home({ navigation }) {
                 </TouchableOpacity>
             </View>
             <View style={styles.content}>
-                <Image style={styles.user} source={user} />
+                <Image style={styles.user} source={{uri:'https://avatars2.githubusercontent.com/u/33058536?s=460&u=bc3bdf38003f317058c59880c9f9b73f7c76c0ef&v=4'}} />
                 
                 <Text style={styles.headerText}>Hi, Palloma Gualter </Text>
             
