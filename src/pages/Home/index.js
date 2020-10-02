@@ -8,7 +8,7 @@ import styles from './styles';
 
 export default function Home({ navigation }) {
     const user_name = 'Palloma Gualter';
-    //const user_name = AsyncStorage.getItem('nome_guerra_usuario');
+    //const user_name = AsyncStorage.getItem('user_name');
 
     function handleTakePhoto(){
         navigation.navigate('TakePhoto');

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, KeyboardAvoidingView, Platform, Image, Text, TextInput, TouchableOpacity } from 'react-native';
-
+import { View, AsyncStorage, KeyboardAvoidingView, Platform, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+//AsyncStore Ã© um banco real (SQLite) que utilizamos no Native
 import api from '../../services/api';
 
 import logo from '../../assets/logo.png';
@@ -16,9 +16,15 @@ export default function Login({ navigation }) {
 
         try {
             const response = await api.post('sessions', { email, senha });  
+
+            await AsyncStorage.setItem('id_usuario', response.data._id);
+            await AsyncStorage.setItem('nome_guerra_usuario', response.data.nome_guerra_usuario);
+            
+
             navigation.navigate('Home');
 
             console.log(response.data);
+            console.log(response.data.nome_guerra_usuario);
             console.log(email, senha);
 
             }   catch (err) {
@@ -33,7 +39,7 @@ export default function Login({ navigation }) {
             <View style={styles.form}>
                 <TextInput
                     style={styles.input}
-                    placeholder="E-mail *"
+                    placeholder="E-mail institucional *"
                     placeholderTextColor="#999"
                     keyboardType="email-address"
                     autoCapitalize="none"
@@ -57,7 +63,9 @@ export default function Login({ navigation }) {
                     <Text style={styles.buttonText}>ENTRAR</Text>
                 </TouchableOpacity>
             </View>
-
         </KeyboardAvoidingView>
+        
+        
+        
     );
 }
