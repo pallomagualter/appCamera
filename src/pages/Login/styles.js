@@ -47,6 +47,20 @@ export default StyleSheet.create({
          fontSize: 18,
      },
 
+     buttonNewAccount: {
+        height: 56,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 4,
+     
+     },
+ 
+     buttonTextNewAccount: {
+        fontFamily: 'Archivo',
+        color: '#ffff',
+        fontSize: 18,
+     },
+
      footer: {
         marginTop: 42,
      },

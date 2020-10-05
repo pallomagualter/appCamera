@@ -61,6 +61,10 @@ export default function Login({ navigation }) {
                 <TouchableOpacity onPress={handleSubmit} style={styles.button}>
                     <Text style={styles.buttonText}>ENTRAR</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {}} style={styles.buttonNewAccount}>
+                    <Text style={styles.buttonTextNewAccount}>Create free new account</Text>
+                </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
         
