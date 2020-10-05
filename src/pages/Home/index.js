@@ -15,7 +15,7 @@ export default function Home({ navigation }) {
         
     }
 
-    function handleUser(){
+    function handleFeed(){
         navigation.navigate('Home');
         
     }
@@ -38,14 +38,15 @@ export default function Home({ navigation }) {
                 <Image style={styles.user} source={{uri:'https://avatars2.githubusercontent.com/u/33058536?s=460&u=bc3bdf38003f317058c59880c9f9b73f7c76c0ef&v=4'}} />
                 
                 <Text style={styles.headerText}>Hi, {user_name} </Text>
+
+                <TouchableOpacity onPress={handleFeed} style={styles.button} >
+                    <Text style={styles.buttonText}>FEED</Text>
+                </TouchableOpacity>
             
                 <TouchableOpacity onPress={handleTakePhoto} style={styles.button} >
                     <Text style={styles.buttonText}>TAKE A PHOTO</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={handleUser} style={styles.button} >
-                    <Text style={styles.buttonText}>NOVO USUÁRIO</Text>
-                </TouchableOpacity>
             </View>
         </View>
     );
