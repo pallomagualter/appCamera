@@ -24,7 +24,6 @@ export default function Login({ navigation }) {
             navigation.navigate('Home');
 
             console.log(response.data);
-            console.log(response.data.nome_guerra_usuario);
             console.log(email, senha);
 
             }   catch (err) {
@@ -39,7 +38,7 @@ export default function Login({ navigation }) {
             <View style={styles.form}>
                 <TextInput
                     style={styles.input}
-                    placeholder="E-mail institucional *"
+                    placeholder="E-mail *"
                     placeholderTextColor="#999"
                     keyboardType="email-address"
                     autoCapitalize="none"

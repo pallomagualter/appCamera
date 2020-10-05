@@ -8,10 +8,15 @@ import styles from './styles';
 
 export default function Home({ navigation }) {
     const user_name = 'Palloma Gualter';
-    //const user_name = AsyncStorage.getItem('user_name');
+    //const user_name = AsyncStorage.getItem(nome_guerra_usuario);
 
     function handleTakePhoto(){
         navigation.navigate('TakePhoto');
+        
+    }
+
+    function handleUser(){
+        navigation.navigate('Home');
         
     }
 
@@ -36,6 +41,10 @@ export default function Home({ navigation }) {
             
                 <TouchableOpacity onPress={handleTakePhoto} style={styles.button} >
                     <Text style={styles.buttonText}>TAKE A PHOTO</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={handleUser} style={styles.button} >
+                    <Text style={styles.buttonText}>NOVO USUÁRIO</Text>
                 </TouchableOpacity>
             </View>
         </View>
