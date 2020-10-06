@@ -29,13 +29,35 @@ O appCamera é um aplicativo criado unicamente para estudo da funcionalidade exp
 
 ## :information_source: Desenvolvimento
 
+### :computer_mouse: Backend: 
+
+```bash
+# Clone o Repositório
+$  git clone https://github.com/pallomagualter/backendAppCamera.git
+
+# Va até o diretório do backend, e instale suas dependências
+$ cd backend
+
+#Instale as dependências
+$ yarn 
+
+# Rode o backend 
+$ yarn run 
+```
+
+
 ### :iphone: Mobile:
 
 ```bash
+# Clone o Repositório
+$  git clone https://github.com/pallomagualter/appCamera.git
+
 #Vá até a pasta mobile 
 $ cd appCamera 
+
 #Instale as dependências
 $ yarn 
+
 # Inicie a aplicação
 $ yarn start
 ```
