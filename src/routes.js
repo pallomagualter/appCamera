@@ -7,6 +7,7 @@ const AppStack = createStackNavigator();
 import Login from './pages/Login';
 import Home from './pages/Home';
 import TakePhoto from './pages/TakePhoto';
+import Feed from './pages/Feed'
 
 export default function Routes(){
     return(
@@ -16,7 +17,7 @@ export default function Routes(){
             <AppStack.Screen name="Login" component={Login}/>
             <AppStack.Screen name="Home" component={Home} />
             <AppStack.Screen name="TakePhoto" component={TakePhoto} />
-                        
+            <AppStack.Screen name="Feed" component={Feed} />
           </AppStack.Navigator>
         </NavigationContainer>
     )

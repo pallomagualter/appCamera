@@ -16,7 +16,7 @@ export default function Home({ navigation }) {
     }
 
     function handleFeed(){
-        navigation.navigate('Home');
+        navigation.navigate('Feed');
         
     }
 
