@@ -5,6 +5,8 @@
 ## :computer: Projeto
 
 O appCamera é um aplicativo criado unicamente para estudo da funcionalidade expo-camera.
+<br />
+Funcionalidades da API: salva imagem guardando o horário que ela foi salva no banco para posterior auditoria (caso seja necessário), lista imagens em ordem decrescente para ficar no topo da pilha de imagens sempre a última postada, redimensiona imagem com sharp, dar like em imagem, realtime com socket.io.
 
 
 ## :rocket: Tecnologias
@@ -42,7 +44,23 @@ $ cd backend
 $ yarn 
 
 # Rode o backend 
-$ yarn run 
+$ yarn start 
+```
+
+### :computer: Frontend: 
+
+```bash
+# Clone o Repositório
+$  git clone https://github.com/pallomagualter/appCameraWeb.git
+
+#Vá até a pasta frontend 
+$ cd frontend 
+
+#Instale as dependências
+$ yarn 
+
+#Inicie a aplicação 
+$ yarn start
 ```
 
 
